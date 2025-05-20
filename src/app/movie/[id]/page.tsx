@@ -13,8 +13,8 @@ import MovieCarrousel from "@/components/MoviesCarrousel/MovieCarrousel";
 const MovieDetailPage = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState<IMovieDetail>();
-  
-  //@typescript-eslint/no-explicit-any
+
+  // eslint-disable-next-line  @typescript-eslint/no-explicit-any
   const [recommended, setRecommendedMovies] = useState<any[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

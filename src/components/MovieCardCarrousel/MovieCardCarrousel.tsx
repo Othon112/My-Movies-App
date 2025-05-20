@@ -12,7 +12,7 @@ const MovieCardCarrousel: React.FC<IMovieCard> = ({
 }) => {
     const poster = Config.IMAGE_SOURCE + posterPath;
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center mx-2">
             <div className="mx-auto bg-white/40 rounded-2xl shadow-lg">
                 <div className="grid rounded-2xl max-w-[220px] shadow-sm flex-col group">
                     {/* Poster Image */}
@@ -20,6 +20,7 @@ const MovieCardCarrousel: React.FC<IMovieCard> = ({
                         src={poster}
                         width={170}
                         height={240}
+                        style={{height: "auto", width: "auto"}}
                         className="rounded-t-2xl justify-center grid object-cover"
                         alt={title}
                     />

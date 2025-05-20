@@ -1,16 +1,9 @@
 import api from "../api";
 
-export const getFavoriteMovies = async (guestSessionId: string) => {
+export const getFavoriteMovies = async (guestSessionId: string, page:number = 1) => {
     try {
         const { data } = await api.get(
-            `/account/${guestSessionId}/favorite/movies`,
-            {
-                params: {
-                    language: "en-US",
-                    page: 1,
-                    sort_by: "created_at.asc"
-                }
-            }
+            `/account/${guestSessionId}/favorite/movies?language=en-US&page=${page}`
         );
         return data;
     } catch (error) {

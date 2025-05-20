@@ -8,8 +8,6 @@ import { getRecommendedMovies } from "@/services/movies/getRecommendedMovies";
 import { markAsFavorite } from "@/services/accounts/markAsFavorite";
 import { useGuestSession } from "@/providers/guestSessionContext";
 import { useParams } from "next/navigation";
-import MovieCard from "@/components/MovieCard/MovieCard";
-import MovieList from "@/components/MovieList/MovieList";
 import MovieCarrousel from "@/components/MoviesCarrousel/MovieCarrousel";
 
 const MovieDetailPage = () => {

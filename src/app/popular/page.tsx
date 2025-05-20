@@ -39,11 +39,11 @@ const PopularClientPage = () => {
     {loading ? (
       
       <div className="flex items-center justify-center h-96">
-        <h5 className="text-lg text-gray-500">Cargando...</h5>
+        <h5 className="text-lg text-white">Cargando...</h5>
       </div>
     ) : (
       <>
-        <h3 className="text-3xl font-bold mb-6"> Popular Movies</h3>
+        <h3 className="text-3xl font-bold mb-6 text-white"> Popular Movies</h3>
         <MovieList movies={movies}/> 
         <Pagination
           currentPage={currentPage}

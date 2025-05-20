@@ -1,5 +1,5 @@
 import Link from "next/link";
-import IMovieCard from "@/components/MovieCard/MovieCard";
+import MovieCardCarrousel from "@/components/MovieCardCarrousel/MovieCardCarrousel";
 import { IMovieDetail } from "@/types/IMovieDetail";
 import {
   Carousel,
@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { div } from "@tensorflow/tfjs";
 
 interface MovieCarrouselProps {
   movies: IMovieDetail[];
@@ -15,21 +16,21 @@ interface MovieCarrouselProps {
 
 const MovieCarrousel: React.FC<MovieCarrouselProps> = ({ movies }) => {
   return (
-    <Carousel className="w-full max-w-screen-2xl">
+    
+      <Carousel className="w-full max-w-screen-2xl">
       <CarouselContent>
         {movies.map((movie) => (
           <CarouselItem
             key={movie.id}
-            className="pl-1 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6"
+            className="px-0 basis-1/4"
+            style={{ width: 180, minWidth: 180, maxWidth: 180  }} 
           >
             <Link href={`/movie/${movie.id}`}>
               <div className="flex justify-center items-center h-full">
-                <IMovieCard
+                <MovieCardCarrousel
                   title={movie.title}
-                  voteAverage={movie.vote_average}
                   posterPath={movie.poster_path}
                   releaseYear={new Date(movie.release_date).getFullYear()}
-                  description={movie.overview}
                 />
               </div>
             </Link>
@@ -39,6 +40,8 @@ const MovieCarrousel: React.FC<MovieCarrouselProps> = ({ movies }) => {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
+    
+    
   );
 };
 

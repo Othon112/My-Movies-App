@@ -4,10 +4,10 @@ import React, { useEffect, useState } from "react";
 import getNowPlayingMovies from "@/services/movies/getNowPlayingMovies";
 import MovieList from "@/components/MovieList/MovieList";
 import Pagination from "@/components/Pagination";
-import { on } from "events";
 
 const NowPlayingClientPage = () => {
   const [loading, setLoading] = useState(false);
+  //@typescript-eslint/no-explicit-any
   const [movies, setMovies] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);

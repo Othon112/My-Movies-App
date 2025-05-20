@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { div } from "@tensorflow/tfjs";
+
 
 interface MovieCarrouselProps {
   movies: IMovieDetail[];

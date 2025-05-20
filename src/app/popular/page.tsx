@@ -7,6 +7,7 @@ import Pagination from "@/components/Pagination";
 
 const PopularClientPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
+  //@typescript-eslint/no-explicit-any
   const [movies, setMovies] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
